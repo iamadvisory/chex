@@ -1,7 +1,7 @@
 # chex - lightweight hex utilit written in C.
 ## usage
 ```
-chex <file>
+chex -d <file>
 ```
 
 ## example of work
