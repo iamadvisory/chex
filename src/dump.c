@@ -4,34 +4,36 @@
 
 void dump(FILE *filename) {
   unsigned char buffer[16];
-  size_t read_byts = fread(buffer, sizeof(buffer[0]), 16, filename);
+  size_t bytes_read = fread(buffer, sizeof(buffer[0]), sizeof(buffer), filename);
 
   size_t offset = 0;
 
   printf("OFFSET    HEX                                               ASCII\n");
-  while (read_byts != 0) {
+  while (bytes_read != 0) {
     printf("%08zX  ", offset);
 
-    for (size_t i = 0; i < read_byts; i++) {
+    for (size_t i = 0; i < bytes_read; i++) {
       printf("%02X ", buffer[i]);
     }
 
-    offset += read_byts;
+    offset += bytes_read;
 
-    size_t spaces = 16 - read_byts;
+    size_t spaces = sizeof(buffer) - bytes_read;
     for (size_t i = spaces; i > 0; i--) {
       printf("   ");
     }
     printf("  ");
 
-    for (size_t i = 0; i < read_byts; i++) {
+    for (size_t i = 0; i < bytes_read; i++) {
       if (isprint(buffer[i])) {
         putchar(buffer[i]);
       } else {
         putchar('.');
       }
     }
-    read_byts = fread(buffer, sizeof(buffer[0]), 16, filename);
+
+    bytes_read = fread(buffer, sizeof(buffer[0]), sizeof(buffer), filename);
+
     printf("\n");
   }  
 }
