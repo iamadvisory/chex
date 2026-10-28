@@ -1,4 +1,11 @@
 # chex - lightweight hex utility written in C.
+## installation (unix-only)
+```console
+git clone https://github.com/iamadvisory/chex
+cd chex
+sudo make install
+make clean
+```
 ## usage
 ```console
 chex -d(dump)/-e(edit) <file>
