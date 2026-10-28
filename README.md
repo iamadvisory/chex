@@ -10,7 +10,6 @@ make clean
 ```console
 chex -d(dump)/-e(edit) <file>
 ```
-
 ## example of work
 - dump mode
 ```text
