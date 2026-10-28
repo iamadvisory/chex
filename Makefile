@@ -2,7 +2,7 @@
 CC      ?= cc
 CFLAGS  ?= -std=c17 -Wall -Wextra -Wpedantic -O2
 LDFLAGS ?=
-LDLIBS  ?=
+LDLIBS  ?= -lncurses
 
 # Platform detection
 OS      ?= $(shell uname -s)
@@ -18,8 +18,8 @@ DESTDIR ?=
 
 # Project
 TARGET  := $(BUILD_DIR)/chex
-SOURCES := $(SRC_DIR)/main.c $(SRC_DIR)/dump.c
-HEADERS := $(SRC_DIR)/dump.h
+SOURCES := $(SRC_DIR)/main.c $(SRC_DIR)/dump.c $(SRC_DIR)/edit.c
+HEADERS := $(SRC_DIR)/dump.h $(SRC_DIR)/edit.h
 
 .PHONY: all build clean install platform
 

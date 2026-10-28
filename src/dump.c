@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <ctype.h>
 
-void dump(FILE *filename) {
+void dump(FILE *file) {
   unsigned char buffer[16];
-  size_t bytes_read = fread(buffer, sizeof(buffer[0]), sizeof(buffer), filename);
+  size_t bytes_read = fread(buffer, sizeof(buffer[0]), sizeof(buffer), file);
 
   size_t offset = 0;
 
@@ -32,7 +32,7 @@ void dump(FILE *filename) {
       }
     }
 
-    bytes_read = fread(buffer, sizeof(buffer[0]), sizeof(buffer), filename);
+    bytes_read = fread(buffer, sizeof(buffer[0]), sizeof(buffer), file);
 
     printf("\n");
   }  
