@@ -33,7 +33,7 @@ int main(int argc, char *argv[]) {
     fclose(file);
   } else if (strcmp(argv[1], "--help") == 0) {
     printf("Usage: %s -<arg> <file>\n", argv[0]);
-    printf("Args: -d (dump), -e (edit; in progress)\n");
+    printf("Args: -d (dump), -e (edit)\n");
   } else {
     printf("Unknown argument: %s", argv[1]);
     return 1;
