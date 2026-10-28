@@ -166,7 +166,6 @@ void edit(FILE *file, const char *filename) {
         draw_ui(filename, file_size, buffer, scroll_offset, cursor_offset, status, modified);
         refresh();
 
-        // 3. Ввод
         int ch = getch();
         status = "";
 
