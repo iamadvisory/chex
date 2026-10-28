@@ -35,5 +35,5 @@ void dump(FILE *file) {
     bytes_read = fread(buffer, sizeof(buffer[0]), sizeof(buffer), file);
 
     printf("\n");
-  }  
+  }
 }
